@@ -1,17 +1,26 @@
 {
-  "name": "components-library",
+  "name": "@kautsar-tech/components-library",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": ".dist/vue-hello-world-simple.common.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "rollup --c rollup.config.js",
+    "lint": "vue-cli-service lint",
+    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
+    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
   },
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^6.0.26",
+    "@storybook/addon-links": "^6.0.26",
+    "@storybook/vue": "^6.0.26",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -20,6 +29,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
+    "vue-cli-plugin-storybook": "~2.0.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
